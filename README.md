@@ -103,15 +103,15 @@ NavHost(navController = navController, startDestination = "FirstScreen" ){
 composable("ThirdScreen?someString={someString}", arguments = listOf(navArgument("someString"){nullable = true}))
 ```
 
-Görüldüğü üzere composable() metodunun bir de arguments parametresi bulunmakta. Bu sayede argümanlara yukarıdaki syntax ile null olabilme (nullability), varsayılan değer (defaultValue) gibi başka özellikler tanımlayabiliyoruz. Bir sonraki ekranda yine bu yöntemle argümanın tipini Integer yapacağız.
+Görüldüğü üzere composable() metodunun bir de arguments parametresi bulunmakta. Bu sayede argümanlara yukarıdaki syntax ile null olabilme (nullability), varsayılan değer (defaultValue) gibi başka özellikler tanımlayabiliyoruz. Nullable özelliğini true yaptığımız için artık bu argüman null veya boş String olabilir. Bir sonraki ekranda yine bu yöntemle argümanın tipini Integer yapacağız. Compose'da Navigation Component'in varsayılan tipi String tipidir.
 
 ThirdScreen'e:
 ```kotlin
 navController.navigate("ThirdScreen?someString=${text}")
 ```
-şeklinde navigasyon işlemini gerçekleştirebiliriz. Nullable özelliğini true yaptığımız için bu argüman null veya boş String olabilir.
+şeklinde navigasyon işlemini gerçekleştirebiliriz.
 
-Şimdi dördüncü ekranda argüman tipini Integer yapalım:
+Şimdi dördüncü ekran için argüman tipini Integer yapalım:
 
 ```kotlin
 NavHost(navController = navController, startDestination = "FirstScreen" ){

@@ -1,5 +1,9 @@
 # Compose-Navigation-With-Arguments
 
+<div align="left">
+ <img src="docs/ComposeNavigationWithArgumentsGif.gif" width="230"/>
+</div>
+
 ## İçindekiler
 * [Proje Hakkında](#proje-hakkında)
 * [Açıklama](#açıklama)

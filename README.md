@@ -9,9 +9,9 @@
 * [Açıklama](#açıklama)
   * [Temel kullanım](#temel-kullanım)
   * [Argümanın gönderilmesi ve alınması](#argümanın-gönderilmesi-ve-alınması)
-  * [Argümanlara özellik eklenmesi](#argümanlara-özellik-eklenmesi)
+  * [Optional Arguments ve argümanlara özellik eklenmesi](#optional-arguments-ve-argümanlara-özellik-eklenmesi) 
 * [Teknolojiler](#teknolojiler)
-* [İletişim](#iletişim)
+* [Iletişim](#iletişim)
 
 ## Proje Hakkında
 Bu proje, sadece Navigation Component teknolojisinin argümanlar ile kullanımını göstermek için Jetpack Compose ile geliştirilen temel bir Android uygulamasıdır.
@@ -79,9 +79,9 @@ navController.navigate("SecondScreen/${birStringDeğisken}")
 ```
 şeklinde navigasyon işlemini gerçekleştireceğiz.
 
-Bu syntax kullanımında argüman null veya boş String gönderilemez, hata oluşacaktır. Bunun çözümü ise dokümantasyonda Optional Argument (İsteğe Bağlı Argüman) olarak geçen yapıyı kullanmaktır. Bu yapıyı da üçüncü bir Composable ekran ile oluşturalım ve bir de null olabilme özelliği ekleyelim:
+Bu syntax kullanımında argüman null veya boş String gönderilemez, hata oluşacaktır. Bunun çözümü ise dokümantasyonda Optional Arguments (İsteğe Bağlı Argüman) olarak geçen yapıyı kullanmaktır. Bu yapıyı da üçüncü bir Composable ekran ile oluşturalım ve bir de null olabilme özelliği ekleyelim.
 
-### Argümanlara özellik eklenmesi
+### Optional Arguments ve argümanlara özellik eklenmesi
 
 ```kotlin
 NavHost(navController = navController, startDestination = "FirstScreen" ){
@@ -92,7 +92,7 @@ NavHost(navController = navController, startDestination = "FirstScreen" ){
     }
 
     composable(
-        "ThirdScreen?someString={someString}",
+        "ThirdScreen?someString={someString}", //Optional Argument
         arguments = listOf(
             navArgument("someString"){
                 nullable = true
@@ -151,5 +151,5 @@ NavHost(navController = navController, startDestination = "FirstScreen" ){
 * [Jetpack Compose](https://developer.android.com/jetpack/compose)
 
 
-## İletişim
+## Iletişim
 * [ensertyazilim@gmail.com](#)
